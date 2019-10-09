@@ -3,13 +3,13 @@ import '../../style/homepage.scss'
 import Directory from '../../Components/Directory/Directory'
 
 
-const HomePage = (props) => {
-  console.log(props)
+const HomePage = ({history}) => {
+  console.log(history)
     return (
         <div className='homepage'>
         <h1>Ecommerce App</h1>
   
-        <Directory/>
+        <Directory history={history}/>
       </div>
        
     );
