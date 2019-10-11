@@ -13,12 +13,17 @@ state = {
      //Destructure state
      const {collections} = this.state 
         return (
-            <div className='shop_page'>
-             
-             {collections.map(({id, ...otherCollectionProps}) => (
-               <CollectionPreview key={id} {...otherCollectionProps}/>
-             ))}
-                
+            <div className='shop-page'>
+              {/* We have to pass pieces of info to this component to render therefor we have to loop and pass both individual data and an arraay 
+                NOTE: Anytime you use destructure you have to use the original property names on the data
+
+               */}
+               
+               {
+                 collections.map(({id, ...otherCollections}) => (
+                  <CollectionPreview key={id} {...otherCollections}/>
+                 ))
+               }
             </div>
         );
     }
